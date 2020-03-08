@@ -6,4 +6,4 @@
 - 크롤링한 데이터를 MySQL, MongoDB에 저장
 - 저장한 데이터를 Jupyter Notebook에서 분석
 - HTML과 CSS 개념
-- Javascripy 언어에 대한 개념, 문법
+- Javascrip 언어에 대한 개념, 문법

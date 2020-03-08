@@ -1,3 +1,9 @@
 # 개인적인 공부 기록 보관소
 
-개인적으로 공부한 기록들을 남겨놓고 복습하기 위한 공간 입니다.
+주로 Pyhton을 기반으로 한 공부들을 기록해놓고 있습니다.
+
+- BeautifulSoup, Selenium, Scrapy 프레임워크를 통해 데이터를 웹크롤링
+- 크롤링한 데이터를 MySQL, MongoDB에 저장
+- 저장한 데이터를 Jupyter Notebook에서 분석
+- HTML과 CSS 개념
+- Javascripy 언어에 대한 개념, 문법

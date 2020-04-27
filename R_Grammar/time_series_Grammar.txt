@@ -1,0 +1,12 @@
+- ts데이터인지 확인하는 함수 : is.ts(df)
+- 데이터의 클래스를 확인하는 함수 : class(df)
+- time의 frequency(주기)를 알아보는 함수 : frequency(ts_df)
+- ts데이터로 만드는 함수 : ts(df, start=c(시작시간), frequency=주기)
+- 일정간격이 있는 날짜로 변환 : seq(as.Date('날짜문자열'), by='주기-eg.month,year,day', length.out=어느정도의범위까지만들지)
+- csv파일로 저장시 index없애는 인자 : write.csv(df, "file_name", row.names=F)
+- 그래프 여러개 그리기 : par(mfrow=c(행,열))
+- plot() 인자 : xlab-x축이름, ylab-y축이름, main-그래프메인에뜨는 이름
+ 		col-그래프색깔, lwd-선두께
+- 레전드값 설정 : legend('위치', legend=c('레전드값1',레전드값2'), col=c('색깔1','색깔2',lty=1:2 ) #lty : 숫자에 따른 line유형
+- ts집계 함수 : aggregate(ts_df, nfrequency=집계할주기, FUN=집계함수)
+

@@ -1,0 +1,7 @@
+#몰랐던 문법
+
+1. (python문법) list도 + 로 이어붙일 수 있음
+2. df.append(df2) 하게되면 list.append하는 것처럼 데이터프레임의 행을 붙일 수 있음 ex) R에서 rbind문법처럼
+3. numpy.random.seed(0) : 난수시드생성, 인자에는 0과 같거나 큰 정수가 들어감
+
+

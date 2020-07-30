@@ -27,6 +27,5 @@
 - 📍 Growth Hacking 
   * This is not technical skill, but a theory.
   * Growth Hacking is hot in marketing department these days.
-  * I recommend the book on 'Growth Hacking'.
-    - http://www.yes24.com/Product/Goods/53220322
+  * I recommend the book on 'Growth Hacking'.(<a href='http://www.yes24.com/Product/Goods/53220322'>about the book</a>)
 

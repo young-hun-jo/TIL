@@ -1,4 +1,4 @@
-# 📝 개인적인 공부 기록 보관소
+# 📝 Private study archives
 
 ## 📚 Contents of study
 

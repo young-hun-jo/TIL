@@ -11,7 +11,7 @@
   * how to preprocess data using pandas
   * how to visualize data using Matplotlib, Seaborn, Plotly libraries
 
-- 🦾 Machine Learning
+- 🦾 <a href='https://github.com/young-hun-jo/TIL/tree/master/machine_learning'>Machine Learning</a>
   * realize modeling using library
     - Scikit-learn
     - Keras

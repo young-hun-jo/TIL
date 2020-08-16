@@ -12,6 +12,7 @@
   * how to visualize data using Matplotlib, Seaborn, Plotly libraries
 
 - 🦾 <a href='https://github.com/young-hun-jo/TIL/tree/master/machine_learning'>Machine Learning</a>
+  * Python-based
   * realize modeling using library
     - Scikit-learn
     - Keras

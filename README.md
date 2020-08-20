@@ -13,7 +13,7 @@
 
 - 🦾 <a href='https://github.com/young-hun-jo/TIL/tree/master/machine_learning'>Machine Learning</a>
   * Python-based
-  * realize modeling using library
+  * implement modeling using library
     - Scikit-learn
     - Keras
     

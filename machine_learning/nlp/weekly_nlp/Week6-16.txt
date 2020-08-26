@@ -89,3 +89,18 @@ X가 input으로 들어갈 소리, W가 해독하여 나오는 텍스트라고 �
 - LM은 무엇을 할 수 있는가? a) 여러 가지 문장이 주어졌을 때 가장 그럴듯한 문장을 뽑을 수 있음, b) 문장의 앞부분이.   주어졌을 때 다음 단어를 예측할 수 있음.
 - N-gram의 첫 번째 한계는 BOW 한계와 마찬가지로 멀리 본 적이 없는 단어들을 예측 못함. 그래서 word2vec나 Glove와 같은 워드임베딩을 이용해서 뉴럴네트워크 모델을 통해 학습!
 - N-gram의 두 번째 한계는 멀리 떨어져 있는 중요한 단어를 기억하지 못함. 그래서 RNN을 통해서 해결!
+
+<Week 18>
+이번 글도 잘 읽었습니다! 이번 글을 나름 이해하고 요약하는 데 꽤 걸렸네요...! 마지막에 질문 2가지 있습니다! 혹시 요약본에서 수정할 부분이 있다면 적극적인 지적은 환영입니다 :) 
+<요약>
+- N차원의 벡터인 Word embedding이 하나씩 RNN모델로 들어가 M차원의 벡터가 출력. 이를 Hidden state라고 함.
+- 계속해서 여러 Word embedding이 들어가면서 결합 확률을 chain rule로 풀어서 쓸 수 있음.(이 때, 직전의 소수 단어들만 고려하는 것이 N-gram, 먼~ 단어까지 고려하는 것이 RNN)
+- 이렇게 먼 단어까지 고려할 수 있는 이유는 Hidden state가 input으로 들어왔던 데이터들에 대한 기억을 갖고 있기 때문
+- 이제 Hidden state 벡터들로 다음에 올 단어를 예측. 그러면 어떻게 RNN은 학습 데이터를 훈련시킬까?
+- 학습 데이터를 가르칠 때 정답(label)이 존재해야 하는데 이 떄 정답의 역할로서 Vocabulary list를 만들어주어야 함. Vocabulary lists는 학습 데이터에 존재하는 단어들 중 빈도수가 높은 단어들로 이루어짐(One-hot vector처럼 이루어짐)
+- 이 때, 학습 데이터들은 (input X, output Y)로 자유자재로 만들 수 있어서 따로 레이블링이 필요하지 않아 비지도 학습으로 분류되기도 함.(물론 LM에 한해서)
+- 그래서 Hidden state가 Vocabulary list를 기반으로 다음 단어를 예측하는데, 이 때 활성함수를 Softmax function(multi-class classification 함수) 사용. 그리고 처음에는 Cost가 높을 것이기 때문에 이 Cost를 줄여주기 위해 Cost function으로 Cross entropy function 사용
+
+Q1. 내용을 전개하실 때 Cross entropy function을 설명하시고 바로 LM의 학습 데이터에 대해 설명(따로 labeling이 필요하지 않아 비지도학습으로 분류된다는 내용)하셨는데, 이 학습 데이터에 대한 설명이 바로 직전의 내용인 Cross entropy와 연결이 되는 내용은 아닌거죠..!? 내용을 읽다가 문맥 흐름에서 갑자기!? 이런 느낌이 들어서 혹시나 해서 여쭙습니다..ㅜㅜ 지극히 개인적인 의견입니다!
+
+Q2.  Hidden state에서 다음단어를 예측할 때 Vocabulary list를 사용하고 이 Vocabulary list는 단어 발생 여부를 담고 있는 One-hot vector로 이루어진다고 하셨습니다! 혹시 이 One-hot vector를 단어 발생 빈도 수를 담고 있는 Bag of Words 로 봐도 무방할까요..!? 여러 개념이 나오니 헷갈리네요 ㅜㅜ

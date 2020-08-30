@@ -16,7 +16,10 @@
   * implement modeling using library
     - Scikit-learn
     - Keras
-    
+
+- 🌶 Flask
+  * Python-based Web development framework
+  
 - ®️ R
   * a basic grammar of R
 

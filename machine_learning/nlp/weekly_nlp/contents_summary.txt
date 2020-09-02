@@ -101,9 +101,7 @@ X가 input으로 들어갈 소리, W가 해독하여 나오는 텍스트라고 �
 - 이 때, 학습 데이터들은 (input X, output Y)로 자유자재로 만들 수 있어서 따로 레이블링이 필요하지 않아 비지도 학습으로 분류되기도 함.(물론 LM에 한해서)
 - 그래서 Hidden state가 Vocabulary list를 기반으로 다음 단어를 예측하는데, 이 때 활성함수를 Softmax function(multi-class classification 함수) 사용. 그리고 처음에는 Cost가 높을 것이기 때문에 이 Cost를 줄여주기 위해 Cost function으로 Cross entropy function 사용
 
-Q1. 내용을 전개하실 때 Cross entropy function을 설명하시고 바로 LM의 학습 데이터에 대해 설명(따로 labeling이 필요하지 않아 비지도학습으로 분류된다는 내용)하셨는데, 이 학습 데이터에 대한 설명이 바로 직전의 내용인 Cross entropy와 연결이 되는 내용은 아닌거죠..!? 내용을 읽다가 문맥 흐름에서 갑자기!? 이런 느낌이 들어서 혹시나 해서 여쭙습니다..ㅜㅜ 지극히 개인적인 의견입니다!
-
-Q2.  Hidden state에서 다음단어를 예측할 때 Vocabulary list를 사용하고 이 Vocabulary list는 단어 발생 여부를 담고 있는 One-hot vector로 이루어진다고 하셨습니다! 혹시 이 One-hot vector를 단어 발생 빈도 수를 담고 있는 Bag of Words 로 봐도 무방할까요..!? 여러 개념이 나오니 헷갈리네요 ㅜㅜ
+Q2.  Hidden state에서 다음단어를 예측할 때 Vocabulary list를 사용하고 이 Vocabulary list는 단어 발생 여부를 담고 있는 One-hot vector로 이루어진다고 하셨습니다! 혹시 이 One-hot vector를 단어 발생 빈도 수를 담고 있는 Bag of Words 로 봐도 무방할까요..!? 여러 개념이 나오니 헷갈리네요 ㅜㅜ => 다음 단어를 예측하는 것은 '한 개'의 단어를 예측하는 것이고 이는 one-hot vector를 의미함!
 
 
 <Week 19>

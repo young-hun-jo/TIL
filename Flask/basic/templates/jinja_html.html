@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jinja HTML</title>
+</head>
+<body>
+    <!-- Jinja 문법 :
+    1. 변수명일 땐 중괄호 2개!
+    2. 반복,조건문 등 연산할 땐 중괄호 1개!-->
+    <h1>Hello {{ name }}!</h1>
+    <h2>Birth date of {{name}}: {{birth}}</h2>
+     <!-- 반복문 추가 문법
+    1. range()문법은 동일하나 len()문법은 다름
+    2. 변수명 상관없이 loog.index는 무조건 반복횟수를 나타냄(1부터 시작!)
+    3. list[index] 문법은 파이썬이랑 동일 -->
+    <h3>{% for idx in range(regions|length) %}
+        <li>{{ regions[idx] }} {{ loop.index }} {{ idx }}</li>
+        {% if regions[idx] == 'Seoul' %}
+        <h4>Seoul 입니다.</h4>
+        {% elif regions[idx] == 'Daejeon' %}
+        <h4>Daejeon 입니다.</h4>
+        {% else %}
+        <h4>Busan 일 것입니다.</h4>
+        {% endif %}
+        {% endfor %}
+    </h3>
+</body>
+</html>

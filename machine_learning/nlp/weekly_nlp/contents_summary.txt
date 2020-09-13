@@ -133,3 +133,12 @@ Q1 => 네, 그런 식으로 나옵니다. 실제 예시를 하나 넣어보았�
 
 Q2 => 네 맞습니다. 본문에 나온데로 별도의 머신러닝 모델이 쓰입니다. 이해하신데로 다른 모델의 예측을 일종의 '정답'이라고 생각하고 순서를 찾는거죠. dependency label 역시 지도학습으로 사람이 직접 레이블한 데이터로 학습됩니다. 나중에 깊게 다뤄보도록 하겠습니다!
 
+<Week21>
+* NMT(신경망 기계번역), seq 2 seq모델
+# 번역도 "하나의 언어가 주어졌을 때 다른 언어로 변환되는 확률" 이라서 조건부 확률임. 이걸 학습시키기 위한 데이터는 parallel corpus
+#ASR의 noisy channel model을 encoder-decoder 모델이라고 부르기도 함
+#seq 2 seq 모델 = 조건부 LM + encoder-decoder 모델 + RNN 
+- seq 2 seq 모델은 Encoder RNN 1개 + Decoder RNN 1개로 구성
+- Decoder RNN에서 Encoder RNN의 마지막 hidden state를 계속적으로 참고함
+Q.Decoder RNN에서 Encoder RNN의 마지막 Hidden state를 계속 참고한다고 하셨습니다! 
+위 예시를 빌려보자면, love가 생성한 hidden state를 출력할 때 I가 생성한 hidden state를 참고해서 love의 hidden state를 출력하는 프로세스가 맞다면, Decoder RNN이 계속 참고하는 Encoder RNN의 마지막 hidden state에는 결국 Encoder RNN에 속한 모든 hidden state의 정보를 담고 있다! 라고 말하면 맞는 건가요!? 저의 사고가 맞는지 확인차 질문드립니다!

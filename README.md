@@ -16,6 +16,7 @@
   * implement modeling using library
     - Scikit-learn
     - Keras
+    - Tensorflow
 
 - 🌶 Flask
   * Python-based Web development framework

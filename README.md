@@ -4,7 +4,7 @@
 
 - 🐍 Python
   * Web crawling using BeautifulSoup, Selenium, Scrapy
-  * pymysql, pymongo for querying in jupyter notebook
+  * pymysql, pymongo for querying data in jupyter notebook
   * basic, intermediate, advanced grammar
 
 - 📊 Pandas library

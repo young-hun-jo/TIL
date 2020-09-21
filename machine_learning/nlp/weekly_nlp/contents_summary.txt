@@ -142,3 +142,21 @@ Q2 => 네 맞습니다. 본문에 나온데로 별도의 머신러닝 모델이 
 - Decoder RNN에서 Encoder RNN의 마지막 hidden state를 계속적으로 참고함
 Q.Decoder RNN에서 Encoder RNN의 마지막 Hidden state를 계속 참고한다고 하셨습니다! 
 위 예시를 빌려보자면, love가 생성한 hidden state를 출력할 때 I가 생성한 hidden state를 참고해서 love의 hidden state를 출력하는 프로세스가 맞다면, Decoder RNN이 계속 참고하는 Encoder RNN의 마지막 hidden state에는 결국 Encoder RNN에 속한 모든 hidden state의 정보를 담고 있다! 라고 말하면 맞는 건가요!? 저의 사고가 맞는지 확인차 질문드립니다!
+
+<Week22>
+Seq2Seq의 Encoder RNN의 마지막 Hidden state는 N개의 실수로 이루어진 N by 1 열벡터로 도출. 이를 Sentence embedding이라고도 함.
+
+이 sentence embedding을 참고해서 번역문장을 예측하는 Decoder RNN도 LM모델이 단어 하나씩 확률값을 계산(Softmax function)해 문장을 생성하는 프로세스와 동일. 하지만 일반 RNN LM과 다른 차이점 2개 존재
+
+1.Decoder RNN의 input데이터에 sentence embedding도 같이 넣는다!
+2.랜덤으로 샘플링하지 않고 확률이 높은 단어를 고른다!
+즉, RNN LM과는 달리 Encoder RNN의 마지막 hidden state(sentence embedding)를 이어 받기 때문에 첫 단어를 랜덤샘플링이 아닌 가장 확률이 높은 단어를 고름.
+그런데 이 첫 단어를 선택할 때 잘못 선택할 것을 방지하기 위해서 Top-K Beam Search가 존재
+[Top-K Beam Search]
+첫 단어로 올 후보 단어들을 K개 모두 input으로 집어넣은 후 다음 단계의 RNN으로 들어가서 다음 단어 후보들과의 조합을 통해 가장 적합한 조합들을 필터링(K는 하이퍼파라미터)
+
+<Seq2Seq의 정답을 보고 틀린 부분 학습하는 방법>
+Seq2Seq 모델도 RNN LM모델처럼 softmax layer이 생성한 가장 큰확률 점수 단어와 정답 단어와의 cross-entropy loss를 계산하면서 학습
+
+But..Decoder로 오기 전 Encoder RNN에서 잘못 예측했다면? => BPTT(역전파)방법을 이용해서 encoder RNN에서 틀린 부분도 개선 가능!
+

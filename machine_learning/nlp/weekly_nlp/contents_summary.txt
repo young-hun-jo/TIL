@@ -160,3 +160,28 @@ Seq2Seq 모델도 RNN LM모델처럼 softmax layer이 생성한 가장 큰확률
 
 But..Decoder로 오기 전 Encoder RNN에서 잘못 예측했다면? => BPTT(역전파)방법을 이용해서 encoder RNN에서 틀린 부분도 개선 가능!
 
+<Week23>
+-특정 도메인에서 자주 사용되는 단어를 번역하기 위해서는 전문 용어들이 많이 들어있는 corpus로 학습시키면 됨
+-유머를 제대로 번역하는건 AI에게는 매우 고난이도..
+
+-엄청 길어지는 문장들을 전부 기억하고 제대로 어떻게 번역할까?
+=>앞서 배웠던 Encoder RNN의 마지막 하나의 hidden state(sentence embedding)가 Input문장에 대한
+모든 정보를 기억하지만 input문장이 너무 길어지면 sentence embedding도 과부하가 걸림.. 그래서!
+
+<Attention Mechanism등장!>
+Encoder RNN의 마지막 hidden state(sentence embedding)만 이용하는 것이 아닌 encoder RNN에서 매 단어를 넣을 때마다 나오는 hidden state 전부를 이용하는 것
+->그런데, 이 여러개의 hidden state 벡터들을 한 번에 묶는 방법이 필요. 이 방법이 바로 관심법(attention mechanism). 즉, 긴 문장에서 앞 부분을 번역시 앞 단어들에 좀 더 가중치를 두고 문장의 뒷 부분에서는 뒷 단어들에 더 가중치를 두는 것!
+->그렇다면, 모델이 긴 문장의 여러 단어들 중에서 어떤 부분의 단어들에 더 가중치를 두고 안두고를 판단하게 될까? 이 또한 머신러닝을 통해 데이터를 학습해 단어끼리 어떻게 대응되는지 관계를 찾는 phrase alignment 학습
+
+요즘 가장 핫한 Transformer, BERT 모델의 기반이 바로 이 Attention Mechanism!
+
+Q.관심법에서는 매 단어를 넣을 때마다 나오는 모든 hidden state를 부분(구절)으로 나누어서 weighted sum 한다고 하셨습니다! 그렇다면 Decoder RNN의 첫 번째 단어를 예측할 때 참고하는 앞 부분의 Encoder RNN의 hidden state의 weighted sum한 형태는 일반적인 Seq 2 Seq모델의 sentence embedding처럼 N by 1의 열 벡터형태로 되어있는 건가요!?
+
+
+
+
+
+
+
+
+

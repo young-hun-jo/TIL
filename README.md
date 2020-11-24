@@ -6,6 +6,7 @@
   * Web crawling using BeautifulSoup, Selenium, Scrapy
   * pymysql, pymongo for querying data in jupyter notebook
   * basic, intermediate, advanced grammar
+  * Algorithm
 
 - 📊 Pandas library
   * how to preprocess data using pandas

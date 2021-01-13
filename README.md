@@ -19,6 +19,13 @@
     - Keras
     - Tensorflow
 
+- 🌟 Pyspark
+  * open-source clustering computing framework for data analysis.
+  * distributed processing
+
+- 🗃 SQL
+  * notes for solving query problems
+
 - 🌶 Flask
   * Python-based Web development framework
   

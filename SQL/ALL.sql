@@ -30,4 +30,5 @@ WHERE x.population >= ALL(SELECT 3*y.population
                           WHERE y.continent = x.continent
                           AND y.name != x.name)
 
+
                           

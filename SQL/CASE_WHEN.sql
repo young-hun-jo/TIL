@@ -30,3 +30,10 @@ FROM game
  LEFT JOIN goal ON game.id = goal.matchid
 GROUP BY game.mdate, game.team1, game.team2
 ORDER BY game.mdate, goal.matchid, game.team1, game.team2
+
+/* CASE WHEN 여러번 붙힐 때 */
+SELECT name,
+       CASE WHEN dept IN (1,2) THEN 'Sci'
+            WHEN dept = 3 THEN 'Art'
+            ELSE 'None' END
+FROM teacher

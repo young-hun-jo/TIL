@@ -41,5 +41,5 @@
   * This is not technical skill, but a theory.
   * Growth Hacking is hot in marketing department these days.
   * I recommend the book on 'Growth Hacking'.(<a href='http://www.yes24.com/Product/Goods/53220322'>about the book</a>)<br><br>
-  <img width="1144" alt="my_skills" src="https://user-images.githubusercontent.com/54783194/90783204-c15e1c00-e33a-11ea-82fa-3e26c207444c.png">
+  <img width="1343" alt="스크린샷 2021-11-04 오후 8 37 32" src="https://user-images.githubusercontent.com/54783194/140307123-3ca1adf5-a1b0-4fb4-ac46-8751fde6cfa6.png">
 

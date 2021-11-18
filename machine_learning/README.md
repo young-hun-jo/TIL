@@ -42,19 +42,31 @@
 ### 2. 모델 선정
 - 모든 변수가 범주형 변수이기 때문에 변수 값들을 Normalization 해서는 안 됨
 - 따라서, 변수 값들을 Normalization 하지 않고 예측을 해야 하므로 **Tree 기반 모델**을 선정
+  - Decision Tree
+  - Bagging
+    - Random Forest
+  - Boosting
+    - XGBoost
+    - Light GBM
+
+### 3. 모델 비교 평가
 - 클래스 불균형 문제를 해소하기 위해 다음과 같은 방법을 사용해 후보 모델들의 성능 검증
   - 소수 클래스에 속하는 데이터의 거리 주변에 원본 데이터와 동일하지 않으면서 소수 클래스에 속하는 가상의 데이터를 생성(K-NN 알고리즘 사용해 샘플링하는 기법)
   - 클래스 유형 별 개수를 고려해 학습, 검증 데이터를 분할하는 ``Stratified K-fold`` 교차검증 방법 수행(2만개 데이터씩 총 5번 검증 수행)
 - 사용된 평가 지표: ``정확도(Accuracy)``, ``정밀도(Precision)``, ``재현율(Recall)``, ``F1-score``, ``AUC``
 - 하단의 지표는 5번의 교차 검증 수행한 결과
 
-|Model|Train Accuracy|Valid Accuracy|Precision|Recall|F1-score|AUC|Training time|
+|Model|Train Accuracy|Valid Accuracy|Valid Precision|Valid Recall|Valid F1-score|Valid AUC|Training time|
 |---|---|---|---|---|---|---|---|
 |**Decision Tree**|99.9%|98.8%|0.98|0.98|0.98|0.99|**2.2초**|
 |Random Forest|99.9%|99.5%|0.99|0.99|0.99|0.99|52.5초|
 |XGBoost|99.9%|98.7%|0.98|0.98|0.98|0.99|383.3초|
 |Light GBM|17.2%|17.2%|0.25|0.17|0.15|0.56|27.2초|
 - 위 표의 ``Training time``인 학습 시간은 오버샘플링 한 후인 약 64만 개의 데이터 학습 시간을 의미
+
+### 4. 평가 결과
 - ``Light GBM``을 제외한 모든 모델들의 성능이 매우 좋음
+- 5번의 교차검증에도 불구하고 학습, 검증 데이터 간의 성능 차이가 거의 없으므로 테스트 데이터에 대한 모델의 성능 안정성도 보장
 - 하지만 모델 학습 시간에 있어서 매우 큰 차이가 발생
-- 따라서, 가장 빠른 성능을 보이는 **``Decision Tree``** 로 최종 모델 선정
+- 따라서, 가장 빠른 성능을 보이는 **``Decision Tree``** 로 **최종 모델 선정**
+

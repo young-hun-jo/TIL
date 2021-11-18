@@ -1,8 +1,23 @@
+# 사전에 가장 먼저 수행해야 할 일
+- 이메일로 보내드린 ``LINEAD_ML_조영훈.zip`` 파일을 담당자님의 로컬 컴퓨터 환경변수 중 반드시 ``$HOME``(홈 디렉토리)에 다운로드 받아 주세요! 
+- 위 경로로 지정해야 Flask 웹 서버에서 저장된 모델의 경로를 찾을 수 있습니다!
 # Problem 1
 - ``train_sparse.tsv``, ``test_sparse.tsv`` 데이터를 활용한 다중 분류 예측
 ## 모델 학습 실행 방법
-## 모델 예측 실행 방법
-## Flask 웹 서버에서 예측 방법
+- ``$HOME/LINEAD_ML_조영훈`` 디렉토리에서 하단의 명령어를 수행
+```shell
+python src/train/train_sparse.py
+```
+## Flask 웹 서버에서 새로운 입력 데이터에 대한 예측 방법
+- ``$HOME/LINEAD_ML_조영훈/src`` 디렉토리에서 아래의 명령어를 수행 한 후 열리는 웹 브라우저에서 아래의 url로 이동
+```shell
+http://localhost:8080/html/class.html
+```
+- 위 url 로 접속 시 아래와 같은 데이터 입력 창이 출력<br><br>
+<img width="430" alt="스크린샷 2021-11-19 오전 12 06 31" src="https://user-images.githubusercontent.com/54783194/142441551-12690448-34d5-4109-b04c-c0f900e4ecdc.png"><br>
+- 입력 칸에 ``test.sparse.tsv``와 동일한 형태로 탭(tab)으로 구분된 데이터 한 줄 입력 후 ``데이터 전송`` 버튼 클릭하면 아래와 같이 입력한 데이터에 대한 레이블 값 출력<br><br>
+<img width="430" alt="스크린샷 2021-11-19 오전 12 17 45" src="https://user-images.githubusercontent.com/54783194/142443158-5641691b-f987-4242-9c9b-765e25453f8e.png"><br>
+
 ## 분석 보고서
 ### 1. 데이터 탐색 및 피쳐 추출
 (1) **종속변수**(``label``)

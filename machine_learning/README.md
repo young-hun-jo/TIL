@@ -2,6 +2,21 @@
 - 이메일로 보내드린 ``LINEAD_ML_조영훈.zip`` 파일을 담당자님의 로컬 컴퓨터 환경변수 중 반드시 ``$HOME``(홈 디렉토리)에 다운로드 받아 주세요! 
 - 위 경로로 지정해야 아래의 학습 및 예측 코드, Flask 웹 서버 코드가 동작합니다!
 - 그리고 하단에서 설명하는 명령어는 모두 ``$HOME/LINEAD_ML_조영훈`` 디렉토리에 있는 상태에서 수행해야 합니다!
+
+# Flask 웹 서버에서 새로운 입력 데이터에 대한 예측 방법
+- 반드시 ``$HOME/LINEAD_ML_조영훈`` 디렉토리에서 하단의 명령어로 Flask 웹 서버 시작
+```shell
+python src/main.py
+```
+- 위 코드 수행 후, 아래의 URL로 이동하면 ``sparse.tsv`` 용 데이터와 ``dense.tsv`` 용 데이터를 입력시킬 수 있는 폼이 출력
+```shell
+http://localhost:8080/html/class.html
+```
+<img width="760" alt="스크린샷 2021-11-19 오후 9 43 30" src="https://user-images.githubusercontent.com/54783194/142624703-13bd8734-6fb1-413d-b378-b0cb76e1e599.png"><br>
+- 반드시 두 종류의 입력 데이터 모두 입력시킨 후 ``두 가지 데이터 동시 전송`` 버튼 누르면 각 데이터에 대한 예측 레이블이 아래처럼 출력<br><br>
+<img width="760" alt="스크린샷 2021-11-19 오후 9 46 53" src="https://user-images.githubusercontent.com/54783194/142625113-989c1580-dd7e-4fca-b352-54eeabc372fb.png">
+<br>
+
 # Problem 1
 - ``train.sparse.tsv``, ``test.sparse.tsv`` 데이터를 활용한 다중 분류 예측
 ## Sparse 모델 학습 실행 방법
@@ -30,16 +45,6 @@ python src/test/test_sparse.py [--retrain] [yes/no]
   - 만약 옵션 ``yes``로 설정 시, 학습 데이터로 모델 재학습 후 정확도 계산 및 출력
   - ``$HOME/LINEAD_ML_조영훈/model`` 디렉토리에 새롭게 학습한 모델 저장(덮어쓰기)
   - ``$HOME/LINEAD_ML_조영훈/result``디렉토리에 테스트 데이터 예측결과인 ``result.sparse.txt`` 파일로 저장
-
-## Flask 웹 서버에서 새로운 입력 데이터에 대한 예측 방법
-- ``$HOME/LINEAD_ML_조영훈/src`` 디렉토리에서 아래의 명령어를 수행 한 후 열리는 웹 브라우저에서 아래의 url로 이동
-```shell
-http://localhost:8080/html/class.html
-```
-- 위 url 로 접속 시 아래와 같은 데이터 입력 창이 출력<br><br>
-<img width="430" alt="스크린샷 2021-11-19 오전 12 06 31" src="https://user-images.githubusercontent.com/54783194/142441551-12690448-34d5-4109-b04c-c0f900e4ecdc.png"><br>
-- 입력 칸에 ``test.sparse.tsv``와 동일한 형태로 탭(tab)으로 구분된 데이터 한 줄 입력 후 ``데이터 전송`` 버튼 클릭하면 아래와 같이 입력한 데이터에 대한 레이블 값 출력<br><br>
-<img width="430" alt="스크린샷 2021-11-19 오전 12 17 45" src="https://user-images.githubusercontent.com/54783194/142443158-5641691b-f987-4242-9c9b-765e25453f8e.png"><br>
 
 ## 분석 보고서
 ### 1. 데이터 탐색 및 피쳐 추출

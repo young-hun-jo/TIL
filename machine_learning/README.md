@@ -140,7 +140,7 @@ python src/train/train_dense.py [--epochs] [int] [--batch_size] [int]
 ## Dense 모델 예측 실행 방법
 ```shell
 # 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈/
-python src/test/test_dense.py [--epochs] [int] [--batch_size] [int]
+python src/test/test_dense.py [--retrain] [yes/no]
 ```
 - 위 명령어 수행시 가능한 옵션
 

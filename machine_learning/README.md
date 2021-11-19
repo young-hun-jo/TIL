@@ -8,6 +8,8 @@
 ```shell
 python src/main.py
 ```
+- 서버 시작과 동시에 ``http://localhost:8080/update/model`` URL로 이동하면서 ``model.sparse.dat`` 모델을 로드<br><br>
+<img width="760" alt="스크린샷 2021-11-19 오후 10 02 36" src="https://user-images.githubusercontent.com/54783194/142627255-f87b88da-7e94-4c4b-b8ca-a4fb9101cb43.png"><br>
 - 위 코드 수행 후, 아래의 URL로 이동하면 ``sparse.tsv`` 용 데이터와 ``dense.tsv`` 용 데이터를 입력시킬 수 있는 폼이 출력
 ```shell
 http://localhost:8080/html/class.html

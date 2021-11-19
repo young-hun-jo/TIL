@@ -17,7 +17,7 @@ python src/train/train_sparse.py
 ## Sparse 모델 예측 실행 방법
 ```shell
 # 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈/
-python src/train/test_sparse.py [--retrain] [yes/no]
+python src/test/test_sparse.py [--retrain] [yes/no]
 ```
 - 위 명령어 수행시 가능한 옵션
 
@@ -140,7 +140,7 @@ python src/train/test_sparse.py [--epochs] [int] [--batch_size] [int]
 ## Dense 모델 예측 실행 방법
 ```shell
 # 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈/
-python src/train/test_sparse.py [--epochs] [int] [--batch_size] [int]
+python src/test/test_sparse.py [--epochs] [int] [--batch_size] [int]
 ```
 - 위 명령어 수행시 가능한 옵션
 

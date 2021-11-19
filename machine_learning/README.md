@@ -23,7 +23,7 @@ http://localhost:8080/html/class.html
 - 전체 데이터 결측치 존재하지 
 (1) **종속변수**(``label``)
 - 범주형 변수이기 때문에 클래스의 분포도 확인<br><br>
-<img width="482" alt="스크린샷 2021-11-18 오후 5 31 13" src="https://user-images.githubusercontent.com/54783194/142379662-2d4b409c-3012-45b6-ba1f-5a48103e5a41.png"><br>
+<img width="600" alt="스크린샷 2021-11-18 오후 5 31 13" src="https://user-images.githubusercontent.com/54783194/142379662-2d4b409c-3012-45b6-ba1f-5a48103e5a41.png"><br>
 - 확인 결과, 클래스 불균형 발견
   - 모델 개발 단계에서 성능 검증 시 클래스 분포를 고려해 학습/검증 데이터 분할 수행해야 함
   - 오버샘플링을 통해 클래스 균형 상태로 만들어준 후 모델의 성능 검증 시도
@@ -36,7 +36,7 @@ http://localhost:8080/html/class.html
 - ``a_date`` 또는 ``c_date`` 필드로부터 생성한 파생변수들(``연도(year)``, ``월(month)``, ``시간대(hour)``) 과 종속변수(``label``)과의 관계 파악을 위해 통계적 검정 수행
   - 두 범주형 변수 간의 관계 파악을 해야하고 종속변수 유형이 하나의 모집단에 속하기 때문에 **독립성 검정**을 위해 카이제곱 통계적 검정 수행
   - 카이제곱 통계적 검정에서 **``p-value < 0.05``** 라면 두 범주형 변수 간의 관계가 있음을 의미<br><br>
-  <img width="456" alt="스크린샷 2021-11-18 오후 5 37 03" src="https://user-images.githubusercontent.com/54783194/142380484-feb2a531-7828-43be-9db0-8d8a24432499.png"><br>
+  <img width="650" alt="스크린샷 2021-11-18 오후 5 37 03" src="https://user-images.githubusercontent.com/54783194/142380484-feb2a531-7828-43be-9db0-8d8a24432499.png"><br>
   - 위와 같이 통계적 검정 결과, 생성한 시간 관련 파생변수들 모두 종속변수에 따라 빈도차이가 존재하므로 종속변수와 관계가 있음을 알 수 있음
   - 따라서, 예측 모델 개발 시, Feature Engineering 으로 사용하기로 결정
 
@@ -44,13 +44,13 @@ http://localhost:8080/html/class.html
 - 먼저, 주어진 다른 변수들 중 아래 그림에서 ``ftr2``, ``ftr3``, ``ftr6``, ``ftr7`` 변수들과 종속변수 간의 관계 파악을 위해 동일하게 독립성 검정 수행
   - 여기서 피어슨 상관분석을 하지 않은 이유는 '과제 설명' 부분에서 필드 모두 문자열 형태의 데이터라고 했기 때문. 모두 문자열 데이터라는 것은 모두 범주형 데이터임을 의미
 - ``ftr2``, ``ftr3``, ``ftr6``, ``ftr7`` 변수들과 종속변수 간의 독립성 검정 수행 결과는 아래와 같음<br><br>
-<img width="508" alt="스크린샷 2021-11-18 오후 5 46 18" src="https://user-images.githubusercontent.com/54783194/142381821-0751b55a-7eb3-492f-a179-acc6cd86bd87.png"><br>
+<img width="650" alt="스크린샷 2021-11-18 오후 5 46 18" src="https://user-images.githubusercontent.com/54783194/142381821-0751b55a-7eb3-492f-a179-acc6cd86bd87.png"><br>
 - 통계적 검정 결과, 다른 익명의 변수들도 모두 종속변수와 관계가 있다고 판단
 - 따라서, 예측 모델 개발 시, 해당 변수들 모두 변수로 활용하기로 결정
 
 (4) **Sparse한 익명의 변수**
 - 여기서 'Sparse한 익명의 변수'란, 아래 그림에서 ``ftr1``을 의미<br><br>
-<img width="466" alt="스크린샷 2021-11-18 오후 5 50 12" src="https://user-images.githubusercontent.com/54783194/142382450-402af6c1-3084-4568-b180-c5c7d7d4b75b.png"><br>
+<img width="550" alt="스크린샷 2021-11-18 오후 5 50 12" src="https://user-images.githubusercontent.com/54783194/142382450-402af6c1-3084-4568-b180-c5c7d7d4b75b.png"><br>
 - 해당 변수에 들어있는 숫자들이 무엇을 의미하는 것인지 파악이 불가
 - 광고 내용 텍스트의 단어들을 사전에 정의한 Vocabulary 범위의 인덱스로 매핑한 변수라고 생각해 0을 모두 제거
 - 0 이외의 값들에 대해 벡터화 후 코사인 유사도를 계산하려 했으나 약 ``(10만, 1만 5천)`` 형상의 Sparse한 행렬이 계산됨
@@ -120,7 +120,7 @@ http://localhost:8080/html/class.html
 <img width="200" alt="스크린샷 2021-11-19 오후 2 42 30" src="https://user-images.githubusercontent.com/54783194/142571356-200eee01-5630-49e6-bbea-66761c566bba.png"><br><br>
 - 따라서, 종속변수인 ``label`` 값이 클수록 양의 상관관계를 보이는 독립변수가 있다면 해당 독립변수의 값이 클수록 ``label`` 값이 클 것임을 알 수 있음
 - 종속변수와 상관계수 값이 ``0.1`` 이상인 것들은 아래처럼 총 42개의 변수들임을 알 수 있음. 이를 하단의 ANOVA 분석결과와 비교<br>
-<img width="420" alt="스크린샷 2021-11-19 오후 2 57 50" src="https://user-images.githubusercontent.com/54783194/142572796-a0503ca3-74bf-462f-bb44-92c086a98fe1.png">
+<img width="600" alt="스크린샷 2021-11-19 오후 2 57 50" src="https://user-images.githubusercontent.com/54783194/142572796-a0503ca3-74bf-462f-bb44-92c086a98fe1.png">
 <br>
 
 (2) 이원 분산분석(Two-way ANOVA)

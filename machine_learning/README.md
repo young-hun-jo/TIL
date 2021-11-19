@@ -1,35 +1,35 @@
 # 사전에 가장 먼저 수행해야 할 일
 - 이메일로 보내드린 ``LINEAD_ML_조영훈.zip`` 파일을 담당자님의 로컬 컴퓨터 환경변수 중 반드시 ``$HOME``(홈 디렉토리)에 다운로드 받아 주세요! 
 - 위 경로로 지정해야 Flask 웹 서버에서 저장된 모델의 경로를 찾을 수 있습니다!
+- 그리고 하단에서 설명하는 명령어는 모두 ``$HOME/LINEAD_ML_조영훈`` 디렉토리에 있는 상태에서 수행해야 합니다!
 # Problem 1
 - ``train.sparse.tsv``, ``test.sparse.tsv`` 데이터를 활용한 다중 분류 예측
 ## Sparse 모델 학습 실행 방법
-- ``$HOME/LINEAD_ML_조영훈`` 디렉토리에서 하단의 명령어를 수행
 ```shell
-# 상대경로
+# 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈/
 python src/train/train_sparse.py
-# 절대경로
-python $HOME/LINEAD_ML_조영훈/src/train/train_sparse.py
 ```
 - 위 명령어 수행 시 다음과 같은 동작들이 수행
   - ``train.sparse.tsv`` 데이터 로드 및 전처리
   - 모델이 학습 후 학습 데이터에 대한 정확도 계산 및 출력
-  - ``$HOME/LINEAD_ML_조영훈/model/`` 디렉토리에 새롭게 학습한 모델 저장(덮어쓰기)
+  - ``$HOME/LINEAD_ML_조영훈/model/`` 디렉토리에 ``model.dense.dat`` 파일로 새롭게 학습한 모델 저장(덮어쓰기)
 
 ## Sparse 모델 예측 실행 방법
-- ``$HOME/LINEAD_ML_조영훈`` 디렉토리에서 하단의 명령어를 수행
 ```shell
-# 상대경로
-python src/train/test_sparse.py [-rt] [yes/no]
-# 절대경로
-python $HOME/LINEAD_ML_조영훈/src/train/test_sparse.py [-rt] [yes/no]
+# 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈/
+python src/train/test_sparse.py [--retrain] [yes/no]
 ```
-- 위 명령어 수행시 옵션 기능이 하나 존재
+- 위 명령어 수행시 가능한 옵션
 
-|명령어|축약 명령어|의미|인자|
-|---|---|---|---|
-|``--retrain``|``-rt``|``train.sparse.tsv`` 데이터를 다시 학습하고 예측할 것인지|``yes`` 또는 ``no``|
+|명령어|축약 명령어|의미|인자|기본값|
+|---|---|---|---|---|
+|``--retrain``|``-rt``|``train.sparse.tsv`` 데이터를 다시 학습하고 예측할 것인지|``yes`` 또는 ``no``|``no``|
 
+- 위 명령어 수행 시 다음과 같은 동작들이 수행
+  - 테스트 데이터인 ``test.sparse.tsv`` 로드 및 전처리
+  - 만약 옵션 ``yes``로 설정 시, 학습 데이터로 모델 재학습 후 정확도 계산 및 출력
+  - ``$HOME/LINEAD_ML_조영훈/model`` 디렉토리에 새롭게 학습한 모델 저장(덮어쓰기)
+  - ``$HOME/LINEAD_ML_조영훈/result``디렉토리에 테스트 데이터 예측결과인 ``result.sparse.txt`` 파일로 저장
 
 ## Flask 웹 서버에서 새로운 입력 데이터에 대한 예측 방법
 - ``$HOME/LINEAD_ML_조영훈/src`` 디렉토리에서 아래의 명령어를 수행 한 후 열리는 웹 브라우저에서 아래의 url로 이동
@@ -120,7 +120,42 @@ http://localhost:8080/html/class.html
 
 # Problem 2
 - ``train.dense.tsv``, ``test.dense.tsv`` 데이터를 활용한 다중 분류 예측
-## 모델 학습 실행 방법
+## Dense 모델 학습 실행 방법
+```shell
+# 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈/
+python src/train/test_sparse.py [--epochs] [int] [--batch_size] [int]
+```
+- 위 명령어 수행시 가능한 옵션
+
+|명령어|축약 명령어|의미|인자|기본값|
+|---|---|---|---|---|
+|``--epochs``|``-e``|딥러닝 모델 학습 Epoch 횟수|정수(``int``) 형태로 지정|45|
+|``--batch_size``|``-b``|딥러닝 모델 Mini-batch 학습시 배치 사이즈|정수(``int``) 형태로 지정|2000|
+
+- 위 명령어 수행 시 다음과 같은 동작들이 수행
+  - ``train.dense.tsv`` 데이터 로드 및 전처리
+  - 순수 ``numpy``로 구현한 은닉층이 4개인 Fully Connected layer 신경망 모델 학습
+  - ``$HOME/LINEAD_ML_조영훈/model/`` 디렉토리에 ``model.dense.dat`` 파일로 새롭게 학습한 모델 저장(덮어쓰기)
+
+## Dense 모델 예측 실행 방법
+```shell
+# 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈/
+python src/train/test_sparse.py [--epochs] [int] [--batch_size] [int]
+```
+- 위 명령어 수행시 가능한 옵션
+
+|명령어|축약 명령어|의미|인자|기본값|
+|---|---|---|---|---|
+|``--retrain``|``-rt``|``train.dense.tsv`` 데이터를 다시 학습하고 예측할 것인지|``yes`` 또는 ``no``|``no``|
+
+- 위 명령어 수행 시 다음과 같은 동작들이 수행
+  - 테스트 데이터인 ``test.dense.tsv`` 로드 및 전처리
+  - 만약 옵션 ``yes``로 설정 시, 학습 데이터로 모델 재학습 후 정확도 계산 및 출력
+  - ``$HOME/LINEAD_ML_조영훈/model`` 디렉토리에 새롭게 학습한 모델 저장(덮어쓰기)
+  - ``$HOME/LINEAD_ML_조영훈/result`` 디렉토리에 테스트 데이터 예측결과인 ``result.dense.txt`` 파일로 저장
+
+
+
 ## Flask 웹 서버에서 새로운 입력 데이터에 대한 예측 방법
 ## 분석 보고서
 ### 1. 데이터 탐색

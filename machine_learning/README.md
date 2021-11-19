@@ -2,7 +2,7 @@
 - 이메일로 보내드린 ``LINEAD_ML_조영훈.zip`` 파일을 담당자님의 로컬 컴퓨터 환경변수 중 반드시 ``$HOME``(홈 디렉토리)에 다운로드 받아 주세요! 
 - 위 경로로 지정해야 Flask 웹 서버에서 저장된 모델의 경로를 찾을 수 있습니다!
 # Problem 1
-- ``train_sparse.tsv``, ``test_sparse.tsv`` 데이터를 활용한 다중 분류 예측
+- ``train.sparse.tsv``, ``test.sparse.tsv`` 데이터를 활용한 다중 분류 예측
 ## 모델 학습 실행 방법
 - ``$HOME/LINEAD_ML_조영훈`` 디렉토리에서 하단의 명령어를 수행
 ```shell
@@ -85,3 +85,6 @@ http://localhost:8080/html/class.html
 - 하지만 모델 학습 시간에 있어서 매우 큰 차이가 발생
 - 따라서, 가장 빠른 성능을 보이는 **``Decision Tree``** 로 **최종 모델 선정**
 
+# Problem 2
+- ``train.dense.tsv``, ``test.dense.tsv`` 데이터를 활용한 다중 분류 예측
+## 모델학습

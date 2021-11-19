@@ -3,11 +3,34 @@
 - 위 경로로 지정해야 Flask 웹 서버에서 저장된 모델의 경로를 찾을 수 있습니다!
 # Problem 1
 - ``train.sparse.tsv``, ``test.sparse.tsv`` 데이터를 활용한 다중 분류 예측
-## 모델 학습 실행 방법
+## Sparse 모델 학습 실행 방법
 - ``$HOME/LINEAD_ML_조영훈`` 디렉토리에서 하단의 명령어를 수행
 ```shell
+# 상대경로
 python src/train/train_sparse.py
+# 절대경로
+python $HOME/LINEAD_ML_조영훈/src/train/train_sparse.py
 ```
+- 위 명령어 수행 시 다음과 같은 동작들이 수행
+  - ``train.sparse.tsv`` 데이터 로드 및 전처리
+  - 모델이 학습 후 학습 데이터에 대한 정확도 계산 및 출력
+  - ``$HOME/LINEAD_ML_조영훈/model/`` 디렉토리에 새롭게 학습한 모델 저장(덮어쓰기)
+
+## Sparse 모델 예측 실행 방법
+- ``$HOME/LINEAD_ML_조영훈`` 디렉토리에서 하단의 명령어를 수행
+```shell
+# 상대경로
+python src/train/test_sparse.py [-rt] [yes/no]
+# 절대경로
+python $HOME/LINEAD_ML_조영훈/src/train/test_sparse.py [-rt] [yes/no]
+```
+- 위 명령어 수행시 옵션 기능이 하나 존재
+
+|명령어|축약 명령어|의미|인자|
+|---|---|---|---|
+|``--retrain``|``-rt``|``train.sparse.tsv`` 데이터를 다시 학습하고 예측할 것인지|``yes`` 또는 ``no``|
+
+
 ## Flask 웹 서버에서 새로운 입력 데이터에 대한 예측 방법
 - ``$HOME/LINEAD_ML_조영훈/src`` 디렉토리에서 아래의 명령어를 수행 한 후 열리는 웹 브라우저에서 아래의 url로 이동
 ```shell

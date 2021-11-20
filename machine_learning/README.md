@@ -216,7 +216,7 @@ python src/test/test_dense.py [--retrain] [yes/no]
 ### 5. 평가 결과
 - ``Random Forest`` 모델의 성능이 가장 좋지만 학습 시간이 약 1분 소요
 - ``Decision Tree`` 모델은 성능이 대체로 좋지만 하이퍼파라미터 튜닝을 수행하여 오버피팅을 극복해야 함
-- ``Light GBM`` 모델은 ``Probplem `` 때와는 달리 높은 성능을 보여줌
+- ``Light GBM`` 모델은 ``Problem 1`` 때와는 달리 높은 성능을 보여줌
 - ML 라이브러리를 사용하지 않고 순수한 ``numpy``로만 구현한 ``Deep Learning`` 모델은 최상위 성능은 아니지만 양호한 성능을 보임
 - 저장 후 웹 서버에서 사용할 모델로는 ``Deep Learning`` 으로 결정
   - 선정 이유: ML 라이브러리 없이 구현한 모델을 저장하고 로드 및 운영하는 방식을 배워보기 위해 선정 

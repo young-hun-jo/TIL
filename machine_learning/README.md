@@ -230,6 +230,7 @@ python src/test/test_dense.py [--retrain] [yes/no]
     - Epoch 횟수를 늘릴수록 정확도가 증가
 
 ### 6. 사후 분석
+- 사후분석은 성능 측면에서 가장 좋았던 ``Random Forest`` 모델 기반으로 수행 
 - ``Problem 1``과 동일하게 Tree 기반 모델의 ``Feature Importance`` 기법과 ``Permutation Importance`` 기법 2가지를 수행해 모델 예측력에 중요한 변수 분석
   - 단, ``Problem 2``의 데이터가 ``10만 x 42개의 변수`` 로 많기 때문에 ``Permutation Importance`` 기법 사용 시 반복 횟수는 5회로 제한<br><br>
 <img width="1000" alt="스크린샷 2021-11-19 오후 4 17 09" src="https://user-images.githubusercontent.com/54783194/142581142-6ce535e9-9e74-450d-a404-b1c8da46ac2e.png"><br>

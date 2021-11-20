@@ -94,7 +94,7 @@ python src/test/test_sparse.py [--retrain] [yes/no]
   - 소수 클래스에 속하는 데이터의 거리 주변에 원본 데이터와 동일하지 않으면서 소수 클래스에 속하는 가상의 데이터를 생성
     - K-NN 알고리즘 사용해 샘플링하는 SMOTE 오버샘플링 
   - 클래스 유형 별 개수를 고려해 학습, 검증 데이터를 분할하는 ``Stratified K-fold`` 교차검증 방법 수행(2만개 데이터씩 총 5번 검증 수행)
-- 사용된 평가 지표: ``정확도(Accuracy)``, ``정밀도(Precision)``, ``재현율(Recall)``, ``F1-score``, ``AUC``
+- 사용된 평가 지표: ``정확도(Accuracy)``, ``정밀도(Precision)``, ``재현율(Recall)``, ``F1-score``, ``AUC``, ``Training time``
 - 하단은 5번의 교차 검증 수행한 결과 
 
 |Model|Train Accuracy|Valid Accuracy|Valid Precision|Valid Recall|Valid F1-score|Valid AUC|Training time|

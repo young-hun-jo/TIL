@@ -118,7 +118,7 @@ python src/test/test_sparse.py [--retrain] [yes/no]
   - 따라서, 다른 방법으로 변수 하나씩 shuffle 후 예측력을 측정함으로써 shuffle 전 예측력보다 얼마나 저하되었는지 기준으로 변수의 중요도 판단하는 ``Permutation Importance`` 기법 활용<br><br>
 <img width="1000" alt="스크린샷 2021-11-19 오후 3 54 55" src="https://user-images.githubusercontent.com/54783194/142578574-ea2478a7-9cd7-4c87-9d91-30d19da9bc18.png"><br><br>
 - 위 그래프 분석 결과, 두 기법 모두 ``ftr2`` 이라는 주어진 변수가 가장 중요도가 높았고 다음으로 시간 관련 파생변수인 ``a_day``, ``a_hour``, ``a_month``를 중요한 변수라고 판단
-- 따라서, 익명의 변수여서 구체적인 의미를 파악할 수는 없은 ``ftr2``가 광고 카테고리 예측 매우 큰 역햘을 담당하며 다음으로 시간 관련 변수들도 예측력에 기여한다는 분석 결과가 도출
+- 따라서, 익명의 변수여서 구체적인 의미를 파악할 수는 없은 ``ftr2``가 광고 카테고리 예측에 매우 큰 역햘을 담당하며 다음으로 시간 관련 변수들도 예측력에 기여한다는 분석 결과가 도출
 
 # 🔖 Problem 2
 - ``train.dense.tsv``, ``test.dense.tsv`` 데이터를 활용한 다중 분류 예측

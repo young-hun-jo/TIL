@@ -115,7 +115,7 @@ python src/test/test_sparse.py [--retrain] [yes/no]
   - Tree 기반 모델의 ``Feature Importance`` 기법 활용
     - 하지만 이 기법은 중복도가 낮은(Cardinality가 높은) 변수 중에 중요하지 않은데 중요하다고 여길 수도 있는 위험도가 있음
   - 따라서, 다른 방법으로 변수 하나씩 shuffle 후 예측력을 측정함으로써 shuffle 전 예측력보다 얼마나 저하되었는지 기준으로 변수의 중요도 판단하는 ``Permutation Importance`` 기법 활용<br><br>
-<img width="800" alt="스크린샷 2021-11-19 오후 3 54 55" src="https://user-images.githubusercontent.com/54783194/142578574-ea2478a7-9cd7-4c87-9d91-30d19da9bc18.png"><br><br>
+<img width="1000" alt="스크린샷 2021-11-19 오후 3 54 55" src="https://user-images.githubusercontent.com/54783194/142578574-ea2478a7-9cd7-4c87-9d91-30d19da9bc18.png"><br><br>
 - 위 그래프 분석 결과, 두 기법 모두 ``ftr2`` 이라는 주어진 변수가 가장 중요도가 높았고 다음으로 시간 관련 파생변수인 ``a_day``, ``a_hour``, ``a_month``를 중요한 변수라고 판단
 - 따라서, 익명의 변수여서 구체적인 의미를 파악할 수는 없은 ``ftr2``가 광고 카테고리 예측 매우 큰 역햘을 담당하며 다음으로 시간 관련 변수들도 예측력에 기여한다는 분석 결과가 도출
 
@@ -229,7 +229,7 @@ python src/test/test_dense.py [--retrain] [yes/no]
 ### 6. 사후 분석
 - ``Problem 1``과 동일하게 Tree 기반 모델의 ``Feature Importance`` 기법과 ``Permutation Importance`` 기법 2가지를 수행해 모델 예측력에 중요한 변수 분석
   - 단, ``Problem 2``의 데이터가 ``10만 x 42개의 변수`` 로 많기 때문에 ``Permutation Importance`` 기법 사용 시 반복 횟수는 5회로 제한<br><br>
-<img width="880" alt="스크린샷 2021-11-19 오후 4 17 09" src="https://user-images.githubusercontent.com/54783194/142581142-6ce535e9-9e74-450d-a404-b1c8da46ac2e.png"><br>
+<img width="1000" alt="스크린샷 2021-11-19 오후 4 17 09" src="https://user-images.githubusercontent.com/54783194/142581142-6ce535e9-9e74-450d-a404-b1c8da46ac2e.png"><br>
 - 위 그래프 분석 결과, 빨간색 네모칸처럼 중요도가 가장 높은 공통의 상위 변수로는 ``ftr113``으로 존재하긴 하지만 해당 변수의 절대적인 중요도 값이 높은 편은 아님
 - 따라서 모델의 예측력에는 42개의 모든 변수가 골고루 기여하는 것으로 판단
 - 단, ``ftr7`` 변수의 의미가 익명이기 때문에 구체적인 변수의 의미는 파악이 불가하지만 광고 카테고리 예측에 가장 크게 기여하는 변수임은 분명한 것으로 도출
@@ -243,7 +243,7 @@ python src/main.py
 ```
 - 서버 시작과 동시에 ``http://localhost:8080/update/model`` URL로 이동하면서 ``model.sparse.dat`` 모델을 로드
 
-<img width="760" alt="스크린샷 2021-11-19 오후 10 02 36" src="https://user-images.githubusercontent.com/54783194/142627255-f87b88da-7e94-4c4b-b8ca-a4fb9101cb43.png"><br>
+<img width="792" alt="스크린샷 2021-11-20 오후 10 00 51" src="https://user-images.githubusercontent.com/54783194/142727253-2839b695-1d93-4877-8361-b27a4c7b9e85.png"><br>
 - 위 코드 수행 후, 아래의 URL로 이동하면 ``test.sparse.tsv`` 와 동일한 형태의 데이터를 입력시킬 수 있는 폼이 출력
 ```shell
 http://localhost:8080/html/class.html

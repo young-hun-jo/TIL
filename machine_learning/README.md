@@ -127,7 +127,7 @@ python src/test/test_sparse.py [--retrain] [yes/no]
 # 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈
 python src/train/train_dense.py [--epochs] [int] [--batch_size] [int]
 ```
-- 위 명령어 수행시 가능한 옵션
+- 위 명령어 수행 시 가능한 옵션
 
 |명령어|축약 명령어|의미|인자|기본값|
 |---|---|---|---|---|
@@ -144,7 +144,7 @@ python src/train/train_dense.py [--epochs] [int] [--batch_size] [int]
 # 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈
 python src/test/test_dense.py [--retrain] [yes/no]
 ```
-- 위 명령어 수행시 가능한 옵션
+- 위 명령어 수행 시 가능한 옵션
 
 |명령어|축약 명령어|의미|인자|기본값|
 |---|---|---|---|---|

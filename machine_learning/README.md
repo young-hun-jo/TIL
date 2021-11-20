@@ -217,7 +217,7 @@ python src/test/test_dense.py [--retrain] [yes/no]
 |Decision Tree|99.9%|90.3%|0.90|0.90|0.90|8.1초|
 |Random Forest|99.9%|96.3%|0.96|0.96|0.96|64초|
 |Light GBM|84.3%|80.8%|0.80|0.80|0.80|11.3초|
-|Deep Learning|88.2%|87.9%|0.87|0.87|0.87|13.1초|
+|Deep Learning|88.2%|87.9%|0.87|0.87|0.87|1.8초|
 
 ### 5. 평가 결과
 - ``Random Forest`` 모델의 성능이 가장 좋지만 학습 시간이 약 1분 소요
@@ -225,7 +225,9 @@ python src/test/test_dense.py [--retrain] [yes/no]
 - ``Light GBM`` 모델은 ``Problem 1`` 때와는 달리 높은 성능을 보여줌
 - ML 라이브러리를 사용하지 않고 순수한 ``numpy``로만 구현한 ``Deep Learning`` 모델은 최상위 성능은 아니지만 양호한 성능을 보임
 - 저장 후 웹 서버에서 사용할 모델로는 ``Deep Learning`` 으로 결정
-  - 선정 이유: ML 라이브러리 없이 구현한 모델을 저장하고 로드 및 운영하는 방식을 배워보기 위해 선정 
+  - 선정 이유
+    - ML 라이브러리 없이 구현한 모델을 저장하고 로드 및 운영하는 방식을 배워보기 위해 선정
+    - Epoch 횟수를 늘릴수록 정확도가 증가
 
 ### 6. 사후 분석
 - ``Problem 1``과 동일하게 Tree 기반 모델의 ``Feature Importance`` 기법과 ``Permutation Importance`` 기법 2가지를 수행해 모델 예측력에 중요한 변수 분석

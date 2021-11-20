@@ -10,7 +10,7 @@ $HOME/LINEAD_ML_조영훈
 - ``train.sparse.tsv``, ``test.sparse.tsv`` 데이터를 활용한 다중 분류 예측
 ## 🔗 Sparse 모델 학습 실행 방법
 ```shell
-# 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈/
+# 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈
 python src/train/train_sparse.py
 ```
 - 위 명령어 수행 시 다음과 같은 동작들이 수행
@@ -20,7 +20,7 @@ python src/train/train_sparse.py
 
 ## 🔗 Sparse 모델 예측 실행 방법
 ```shell
-# 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈/
+# 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈
 python src/test/test_sparse.py [--retrain] [yes/no]
 ```
 - 위 명령어 수행시 가능한 옵션
@@ -118,7 +118,7 @@ python src/test/test_sparse.py [--retrain] [yes/no]
 - ``train.dense.tsv``, ``test.dense.tsv`` 데이터를 활용한 다중 분류 예측
 ## 🔗 Dense 모델 학습 실행 방법
 ```shell
-# 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈/
+# 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈
 python src/train/train_dense.py [--epochs] [int] [--batch_size] [int]
 ```
 - 위 명령어 수행시 가능한 옵션
@@ -135,7 +135,7 @@ python src/train/train_dense.py [--epochs] [int] [--batch_size] [int]
 
 ## 🔗 Dense 모델 예측 실행 방법
 ```shell
-# 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈/
+# 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈
 python src/test/test_dense.py [--retrain] [yes/no]
 ```
 - 위 명령어 수행시 가능한 옵션
@@ -233,7 +233,7 @@ python src/test/test_dense.py [--retrain] [yes/no]
 ## 🔗 Flask 웹 서버에서 새로운 입력 데이터에 대한 예측 방법
 - 하단의 명령어로 Flask 웹 서버 시작
 ```shell
-# 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈/
+# 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈
 python src/main.py
 ```
 - 서버 시작과 동시에 ``http://localhost:8080/update/model`` URL로 이동하면서 ``model.sparse.dat`` 모델을 로드

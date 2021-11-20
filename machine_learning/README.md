@@ -196,7 +196,7 @@ python src/test/test_dense.py [--retrain] [yes/no]
   - Bagging
     - ``Random Forest``
   - Boosting
-    - ``Light GBM(Boosting)``
+    - ``Light GBM``
   - ``Deep Learning(Fully Connected Layer)``
 
 ### 4. 모델 비교 평가

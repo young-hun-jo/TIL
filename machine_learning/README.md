@@ -247,3 +247,44 @@ http://localhost:8080/html/class.html
 - 데이터 입력시킨 후 ``데이터 전송`` 버튼 누르면 입력시킨 데이터에 대한 레이블 예측 값이 아래처럼 출력
 
 <img width="792" alt="스크린샷 2021-11-20 오후 6 53 49" src="https://user-images.githubusercontent.com/54783194/142722073-f8fafc3c-1cda-46bf-8cbe-9c5eb07599db.png"><br>
+
+# 🗃 디렉토리 구조
+
+```
+📦LINEAD_ML_조영훈
+ ┣ 📂model                    -> 예측 모델 저장한 디렉토리
+ ┃ ┣ 📜model.sparse.dat       -> train.sparse.tsv 사용해 빌드한 예측 모델
+ ┃ ┗ 📜model.dense.dat        -> train.dense.tsv 사용해 빌드한 예측 모델
+ ┣ 📂result                   -> 테스트 데이터에 대한 예측 결과 저장
+ ┃ ┣ 📜result.sparse.txt      -> test.sparse.tsv 데이터에 대한 예측 결과
+ ┃ ┗ 📜result.dense.txt       -> test.dense.tsv 데이터에 대한 예측 결과
+ ┣ 📂src                      -> 소스 코드 디렉토리
+ ┃ ┣ 📂dataset                -> 학습 및 테스트 데이터가 있는 디렉토리
+ ┃ ┃ ┣ 📜train.sparse.tsv     -> sparse 학습 데이터
+ ┃ ┃ ┣ 📜train.dense.tsv      -> dense 학습 데이터
+ ┃ ┃ ┣ 📜test.sparse.tsv      -> sparse 테스트 데이터
+ ┃ ┃ ┗ 📜test.dense.tsv       -> dense 테스트 데이터
+ ┃ ┣ 📂page_view           
+ ┃ ┃ ┗ 📜view.py              -> 클라이언트가 전송한 sparse 데이터에 대해 예측한 결과를 웹 브라우저에 표시하는 소스코드
+ ┃ ┣ 📂preprocess         
+ ┃ ┃ ┗ 📜input.py             -> 클라이언트가 전송한 sparse 데이터를 모델에 맞게 전처리하는 소스코드
+ ┃ ┣ 📂templates
+ ┃ ┃ ┗ 📜class.html           -> 클라이언트가 전송할 데이터를 입력하는 웹 브라우저를 구성하는 HTML
+ ┃ ┣ 📂test               
+ ┃ ┃ ┣ 📜test_sparse.py       -> test.sparse.tsv 데이터에 대해 예측 수행하는 소스코드
+ ┃ ┃ ┗ 📜test_dnese.py        -> test.dense.tsv 데이터에 대해 예측 수행하는 소스코드
+ ┃ ┣ 📂train                  -> sparse, dense 데이터를 모델이 학습하는 소스코드가 담겨 있는 디렉토리
+ ┃ ┃ ┣ 📂common               -> 순수 Numpy로 신경망을 구현하기 위해 필요한 함수들이 담긴 디렉토리
+ ┃ ┃ ┃ ┣ 📜functions.py       -> 다양한 활성함수, 손실함수가 담겨 있는 소스코드
+ ┃ ┃ ┃ ┣ 📜gradients.py       -> 수치 미분을 계산하는 함수
+ ┃ ┃ ┃ ┣ 📜layers.py          -> 활성화 함수가 적용된 행렬 곱 계층을 구현한 소스코드
+ ┃ ┃ ┃ ┣ 📜multi_fc_layer.py  -> 다층 신경망 빌드, 오차역전파 수행해 파라미터의 기울기를 구하는 소스코드
+ ┃ ┃ ┃ ┗ 📜optimizers.py      -> 기울기를 기반으로 파라미터를 갱신하는 최적화 기법을 구현하는 소스코드(SGD, Momentum, Adam 등)
+ ┃ ┃ ┣ 📜train_sparse.py      -> train.sparse.tsv 데이터를 학습하는 소스코드
+ ┃ ┃ ┗ 📜train_dnese.py       -> train.dense.tsv 데이터를 학습하는 소스코드
+ ┃ ┣ 📂update_models          
+ ┃ ┃ ┗ 📜update.py            -> Flask 웹 서버 시작 시, model.sparse.model을 로드하는 소스코드
+ ┃ ┣ 📜main.py                -> Flask 웹 서버 시작하는 메인 스크립트 소스코드
+ ┃ ┣ 📜observer.py            -> model.sparse.dat 파일이 변경된 경우, 감지한 후 모델 재로드 하는 소스코드
+ ┗ ┗ 📜requirements.txt       -> 해당 소스코들을 모두 안정적으로 수행하기 위해 필요한 패키지 버젼
+```

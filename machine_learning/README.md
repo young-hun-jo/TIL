@@ -8,16 +8,17 @@
 ```shell
 python src/main.py
 ```
-- 서버 시작과 동시에 ``http://localhost:8080/update/model`` URL로 이동하면서 ``model.sparse.dat`` 모델을 로드<br><br>
+- 서버 시작과 동시에 ``http://localhost:8080/update/model`` URL로 이동하면서 ``model.sparse.dat`` 모델을 로드
+
 <img width="760" alt="스크린샷 2021-11-19 오후 10 02 36" src="https://user-images.githubusercontent.com/54783194/142627255-f87b88da-7e94-4c4b-b8ca-a4fb9101cb43.png"><br>
-- 위 코드 수행 후, 아래의 URL로 이동하면 ``sparse.tsv`` 용 데이터와 ``dense.tsv`` 용 데이터를 입력시킬 수 있는 폼이 출력
+- 위 코드 수행 후, 아래의 URL로 이동하면 ``test.sparse.tsv`` 와 동일한 형태의 데이터를 입력시킬 수 있는 폼이 출력
 ```shell
 http://localhost:8080/html/class.html
 ```
-<img width="760" alt="스크린샷 2021-11-19 오후 9 43 30" src="https://user-images.githubusercontent.com/54783194/142624703-13bd8734-6fb1-413d-b378-b0cb76e1e599.png"><br>
-- 반드시 두 종류의 입력 데이터 모두 입력시킨 후 ``두 가지 데이터 동시 전송`` 버튼 누르면 각 데이터에 대한 예측 레이블이 아래처럼 출력<br><br>
-<img width="760" alt="스크린샷 2021-11-19 오후 9 46 53" src="https://user-images.githubusercontent.com/54783194/142625113-989c1580-dd7e-4fca-b352-54eeabc372fb.png">
-<br>
+<img width="792" alt="스크린샷 2021-11-20 오후 6 53 40" src="https://user-images.githubusercontent.com/54783194/142722048-58a3e40e-3d73-41a4-966e-4d40592aa0fe.png"><br>
+- 데이터 입력시킨 후 ``데이터 전송`` 버튼 누르면 입력시킨 데이터에 대한 레이블 예측 값이 아래처럼 출력
+
+<img width="792" alt="스크린샷 2021-11-20 오후 6 53 49" src="https://user-images.githubusercontent.com/54783194/142722073-f8fafc3c-1cda-46bf-8cbe-9c5eb07599db.png"><br>
 
 # Problem 1
 - ``train.sparse.tsv``, ``test.sparse.tsv`` 데이터를 활용한 다중 분류 예측

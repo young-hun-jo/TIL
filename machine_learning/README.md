@@ -208,7 +208,7 @@ python src/test/test_dense.py [--retrain] [yes/no]
 ### 4. 모델 비교 평가
 - 클래스 불균형 문제를 해소하기 위해 클래스 유형 별 개수를 고려해 데이터를 분할하는 ``Stratified K-fold`` 교차검증 방법을 수행(2만개 데이터씩 총 5번 수행)
   - 변수 개수가 너무 많기 때문에 오랜 모델 학습 시간으로 인해 ``Problem 1``과 달리 오버샘플링은 진행하지 않음
-- 사용된 평가지표: ``정확도(Accuracy)``, ``정밀도(Precision)``, ``재현율(Recall)``, ``F1-score``
+- 사용된 평가지표: ``정확도(Accuracy)``, ``정밀도(Precision)``, ``재현율(Recall)``, ``F1-score``, ``Training time``
 - 하단은 5번의 교차 검증을 수행한 결과 표
   - 단, ``Deep Learning``의 평가지표는 1번의 교차검증만을 수행한 결과이며 ``Training Time``은 1번의 Epoch 당 시간을 의미
 

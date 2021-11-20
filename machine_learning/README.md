@@ -233,6 +233,7 @@ python src/test/test_dense.py [--retrain] [yes/no]
 ## 🔗 Flask 웹 서버에서 새로운 입력 데이터에 대한 예측 방법
 - 하단의 명령어로 Flask 웹 서버 시작
 ```shell
+# 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈/
 python src/main.py
 ```
 - 서버 시작과 동시에 ``http://localhost:8080/update/model`` URL로 이동하면서 ``model.sparse.dat`` 모델을 로드

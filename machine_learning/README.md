@@ -288,3 +288,31 @@ http://localhost:8080/html/class.html
  ┃ ┣ 📜observer.py            -> model.sparse.dat 파일이 변경된 경우, 감지한 후 모델 재로드 하는 소스코드
  ┗ ┗ 📜requirements.txt       -> 해당 소스코들을 모두 안정적으로 수행하기 위해 필요한 패키지 버젼
 ```
+# ⚙️ 패키지 설치 dependency
+
+```
+autopep8==1.6.0
+certifi==2021.10.8
+click==8.0.3
+Flask==2.0.2
+importlib-metadata==4.8.2
+itsdangerous==2.0.1
+Jinja2==3.0.3
+joblib==1.1.0
+MarkupSafe==2.0.1
+numpy==1.21.4
+pandas==1.3.4
+pycodestyle==2.8.0
+python-dateutil==2.8.2
+pytz==2021.3
+scikit-learn==1.0.1
+scipy==1.7.2
+six==1.16.0
+threadpoolctl==3.0.0
+toml==0.10.2
+typing_extensions==4.0.0
+watchdog==2.1.6
+Werkzeug==2.0.2
+zipp==3.6.0
+```
+

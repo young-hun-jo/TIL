@@ -257,6 +257,7 @@ http://localhost:8080/html/class.html
 
 ```
 📦 LINEAD_ML_조영훈
+ ┣ 📜 README.md                -> 소스코드 실행 
  ┣ 📂 model                    -> 예측 모델 저장한 디렉토리
  ┃ ┣ 📜 model.sparse.dat       -> train.sparse.tsv 사용해 빌드한 예측 모델
  ┃ ┗ 📜 model.dense.dat        -> train.dense.tsv 사용해 빌드한 예측 모델

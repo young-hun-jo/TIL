@@ -36,7 +36,7 @@ python src/test/test_sparse.py [--retrain] [yes/no]
 
 - 위 명령어 수행 시 다음과 같은 동작들이 수행
   - 테스트 데이터인 ``test.sparse.tsv`` 로드 및 전처리
-  - 만약 옵션 ``yes``로 설정 시, 학습 데이터로 모델 재학습 후 정확도 계산 및 출력
+  - 만약 옵션 ``yes``로 설정 시, 학습 데이터인 ``train.sparse.tsv``로 모델 재학습 후 정확도 계산 및 출력
   - ``$HOME/LINEAD_ML_조영훈/model`` 디렉토리에 새롭게 학습한 모델 저장(덮어쓰기)
   - ``$HOME/LINEAD_ML_조영훈/result``디렉토리에 테스트 데이터 예측결과인 ``result.sparse.txt`` 파일로 저장
 

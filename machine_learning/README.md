@@ -37,7 +37,8 @@ python src/test/test_sparse.py [--retrain] [yes/no]
 
 ## 📊 분석 보고서
 ### 1. 데이터 탐색 및 피쳐 추출
-- 전체 데이터 결측치 존재하지 
+- 전체 데이터 결측치 존재하지 않음
+
 (1) **종속변수**(``label``)
 - 범주형 변수이기 때문에 클래스의 분포도 확인<br><br>
 <img width="600" alt="스크린샷 2021-11-18 오후 5 31 13" src="https://user-images.githubusercontent.com/54783194/142379662-2d4b409c-3012-45b6-ba1f-5a48103e5a41.png"><br>

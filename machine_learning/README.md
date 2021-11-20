@@ -250,6 +250,7 @@ python src/main.py
 <img width="792" alt="스크린샷 2021-11-20 오후 10 00 51" src="https://user-images.githubusercontent.com/54783194/142727253-2839b695-1d93-4877-8361-b27a4c7b9e85.png"><br>
 - 위 코드 수행 후, 아래의 URL로 이동하면 ``test.sparse.tsv`` 와 동일한 형태의 데이터를 입력시킬 수 있는 폼이 출력
 ```shell
+# 웹 브라우저에서 새로운 데이터 
 http://localhost:8080/html/class.html
 ```
 <img width="792" alt="스크린샷 2021-11-20 오후 6 53 40" src="https://user-images.githubusercontent.com/54783194/142722048-58a3e40e-3d73-41a4-966e-4d40592aa0fe.png"><br>

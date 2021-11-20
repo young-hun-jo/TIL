@@ -5,6 +5,11 @@
 $HOME/LINEAD_ML_조영훈
 ```
 - 반드시 위 경로로 이동해야 아래의 학습 및 예측 코드, Flask 웹 서버 코드가 동작합니다!
+- 패키지 의존성 충돌 방지를 위해 새로운 가상환경에서 아래의 명령어를 수행해 최적의 패키지 버전을 설치하세요!
+- Python은 ``python==3.7.11`` 버전을 사용합니다.
+```shell
+pip install -r src/requirements.txt
+```
 
 # 🔖 Problem 1
 - ``train.sparse.tsv``, ``test.sparse.tsv`` 데이터를 활용한 다중 분류 예측

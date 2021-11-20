@@ -106,7 +106,7 @@ python src/test/test_sparse.py [--retrain] [yes/no]
 - 따라서, 가장 빠른 학습속도를 보이는 **``Decision Tree``** 로 **최종 모델 선정**
 
 ### 5. 사후 분석
-- 모델을 사후 분석하며 모델의 예측 성능에 영향을 미치는 변수 별 중요도 
+- 모델을 사후 분석하며 모델의 예측 성능에 영향을 미치는 변수 별 중요도 파악
   - Tree 기반 모델의 ``Feature Importance`` 기법 활용
     - 하지만 이 기법은 중복도가 낮은(Cardinality가 높은) 변수 중에 중요하지 않은데 중요하다고 여길 수도 있는 위험도가 있음
   - 따라서, 다른 방법으로 변수 하나씩 shuffle 후 예측력을 측정함으로써 shuffle 전 예측력보다 얼마나 저하되었는지 기준으로 변수의 중요도 판단하는 ``Permutation Importance`` 기법 활용<br><br>

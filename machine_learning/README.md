@@ -183,7 +183,8 @@ python src/test/test_dense.py [--retrain] [yes/no]
 <img width="249" alt="스크린샷 2021-11-19 오후 2 53 58" src="https://user-images.githubusercontent.com/54783194/142572462-b5c8162c-765b-43a0-a3f2-36930ee34b25.png"><br>
 
 - (1) 피어슨 상관관계로 도출된 변수들은 ANOVA로 분석한 결과로 얻은 종속변수와 관계가 없는 변수들에 하나도 속하지 않았음.
-- 심지어, ``p-value >= 0.05``인 종속변수와 관계가 없는 변수들의 피어슨 상관계수는 오히려 음수로 나왔음
+- 심지어, ``p-value >= 0.05``인 종속변수와 관계가 없는 변수들의 피어슨 상관계수는 오히려 음수로 나왔음<br><br>
+<img width="350" alt="스크린샷 2021-11-20 오후 7 36 20" src="https://user-images.githubusercontent.com/54783194/142723216-1b27ebf1-af0b-4821-aa7f-f7c58b99295d.png"><br>
 - 따라서, 피어슨 상관계수 값이 ``0.1`` 이상인 42개의 변수들만을 선정해 입력 데이터로 넣기로 결정
 
 ### 3. 모델 선정

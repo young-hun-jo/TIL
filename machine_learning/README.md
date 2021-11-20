@@ -1,28 +1,14 @@
-# 사전에 가장 먼저 수행해야 할 일
+# 💡 사전에 가장 먼저 수행해야 할 일
 - 이메일로 보내드린 ``LINEAD_ML_조영훈.zip`` 파일을 담당자님의 로컬 컴퓨터 환경변수 중 반드시 ``$HOME``(홈 디렉토리)에 다운로드 받아 주세요! 
-- 위 경로로 지정해야 아래의 학습 및 예측 코드, Flask 웹 서버 코드가 동작합니다!
-- 그리고 하단에서 설명하는 명령어는 모두 ``$HOME/LINEAD_ML_조영훈`` 디렉토리에 있는 상태에서 수행해야 합니다!
-
-# Flask 웹 서버에서 새로운 입력 데이터에 대한 예측 방법
-- 반드시 ``$HOME/LINEAD_ML_조영훈`` 디렉토리에서 하단의 명령어로 Flask 웹 서버 시작
 ```shell
-python src/main.py
+# 반드시 아래의 디렉토리로 이동한 후 하단의 명렁어들 수행
+$HOME/LINEAD_ML_조영훈
 ```
-- 서버 시작과 동시에 ``http://localhost:8080/update/model`` URL로 이동하면서 ``model.sparse.dat`` 모델을 로드
+- 반드시 위 경로로 이동해야 아래의 학습 및 예측 코드, Flask 웹 서버 코드가 동작합니다!
 
-<img width="760" alt="스크린샷 2021-11-19 오후 10 02 36" src="https://user-images.githubusercontent.com/54783194/142627255-f87b88da-7e94-4c4b-b8ca-a4fb9101cb43.png"><br>
-- 위 코드 수행 후, 아래의 URL로 이동하면 ``test.sparse.tsv`` 와 동일한 형태의 데이터를 입력시킬 수 있는 폼이 출력
-```shell
-http://localhost:8080/html/class.html
-```
-<img width="792" alt="스크린샷 2021-11-20 오후 6 53 40" src="https://user-images.githubusercontent.com/54783194/142722048-58a3e40e-3d73-41a4-966e-4d40592aa0fe.png"><br>
-- 데이터 입력시킨 후 ``데이터 전송`` 버튼 누르면 입력시킨 데이터에 대한 레이블 예측 값이 아래처럼 출력
-
-<img width="792" alt="스크린샷 2021-11-20 오후 6 53 49" src="https://user-images.githubusercontent.com/54783194/142722073-f8fafc3c-1cda-46bf-8cbe-9c5eb07599db.png"><br>
-
-# Problem 1
+# 🔖 Problem 1
 - ``train.sparse.tsv``, ``test.sparse.tsv`` 데이터를 활용한 다중 분류 예측
-## Sparse 모델 학습 실행 방법
+## 🔗 Sparse 모델 학습 실행 방법
 ```shell
 # 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈/
 python src/train/train_sparse.py
@@ -32,7 +18,7 @@ python src/train/train_sparse.py
   - 모델이 학습 후 학습 데이터에 대한 정확도 계산 및 출력
   - ``$HOME/LINEAD_ML_조영훈/model/`` 디렉토리에 ``model.dense.dat`` 파일로 새롭게 학습한 모델 저장(덮어쓰기)
 
-## Sparse 모델 예측 실행 방법
+## 🔗 Sparse 모델 예측 실행 방법
 ```shell
 # 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈/
 python src/test/test_sparse.py [--retrain] [yes/no]
@@ -49,7 +35,7 @@ python src/test/test_sparse.py [--retrain] [yes/no]
   - ``$HOME/LINEAD_ML_조영훈/model`` 디렉토리에 새롭게 학습한 모델 저장(덮어쓰기)
   - ``$HOME/LINEAD_ML_조영훈/result``디렉토리에 테스트 데이터 예측결과인 ``result.sparse.txt`` 파일로 저장
 
-## 분석 보고서
+## 📊 분석 보고서
 ### 1. 데이터 탐색 및 피쳐 추출
 - 전체 데이터 결측치 존재하지 
 (1) **종속변수**(``label``)
@@ -126,9 +112,9 @@ python src/test/test_sparse.py [--retrain] [yes/no]
 - 위 그래프 분석 결과, 두 기법 모두 ``ftr2`` 이라는 주어진 변수가 가장 중요도가 높았고 다음으로 시간 관련 파생변수인 ``a_day``, ``a_hour``, ``a_month``를 중요한 변수라는 결과
 - 따라서, 익명의 변수여서 구체적인 의미를 파악할 수는 없은 ``ftr2``가 광고 카테고리 예측 매우 큰 역햘을 담당하며 다음으로 시간 관련 변수들도 예측력에 기여한다는 분석 결과가 도출
 
-# Problem 2
+# 🔖 Problem 2
 - ``train.dense.tsv``, ``test.dense.tsv`` 데이터를 활용한 다중 분류 예측
-## Dense 모델 학습 실행 방법
+## 🔗 Dense 모델 학습 실행 방법
 ```shell
 # 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈/
 python src/train/train_dense.py [--epochs] [int] [--batch_size] [int]
@@ -145,7 +131,7 @@ python src/train/train_dense.py [--epochs] [int] [--batch_size] [int]
   - 순수 ``numpy``로 구현한 은닉층이 4개인 Fully Connected layer 신경망 모델 학습
   - ``$HOME/LINEAD_ML_조영훈/model/`` 디렉토리에 ``model.dense.dat`` 파일로 새롭게 학습한 모델 저장(덮어쓰기)
 
-## Dense 모델 예측 실행 방법
+## 🔗 Dense 모델 예측 실행 방법
 ```shell
 # 현재 디렉토리 경로: $HOME/LINEAD_ML_조영훈/
 python src/test/test_dense.py [--retrain] [yes/no]
@@ -162,10 +148,7 @@ python src/test/test_dense.py [--retrain] [yes/no]
   - ``$HOME/LINEAD_ML_조영훈/model`` 디렉토리에 새롭게 학습한 모델 저장(덮어쓰기)
   - ``$HOME/LINEAD_ML_조영훈/result`` 디렉토리에 테스트 데이터 예측결과인 ``result.dense.txt`` 파일로 저장
 
-
-
-## Flask 웹 서버에서 새로운 입력 데이터에 대한 예측 방법
-## 분석 보고서
+## 📊 분석 보고서
 ### 1. 데이터 탐색
 - 전체 데이터 결측치 존재하지 않음
 (1) 종속변수(``label``)
@@ -241,3 +224,21 @@ python src/test/test_dense.py [--retrain] [yes/no]
 - 위 그래프 분석 결과, 빨간색 네모칸처럼 중요도가 가장 높은 공통의 상위 변수로는 ``ftr7``으로 존재하긴 하지만 해당 변수의 절대적인 중요도 값이 높은 편은 아님
 - 따라서 모델의 예측력에는 42개의 모든 변수가 골고루 기여하는 것으로 판단
 - 단, ``ftr7`` 변수의 의미가 익명이기 때문에 구체적인 변수의 의미는 파악이 불가하지만 광고 카테고리 예측에 가장 크게 기여하는 변수임은 분명한 것으로 도출
+
+# 🔖 Problem 3
+## 🔗 Flask 웹 서버에서 새로운 입력 데이터에 대한 예측 방법
+- 하단의 명령어로 Flask 웹 서버 시작
+```shell
+python src/main.py
+```
+- 서버 시작과 동시에 ``http://localhost:8080/update/model`` URL로 이동하면서 ``model.sparse.dat`` 모델을 로드
+
+<img width="760" alt="스크린샷 2021-11-19 오후 10 02 36" src="https://user-images.githubusercontent.com/54783194/142627255-f87b88da-7e94-4c4b-b8ca-a4fb9101cb43.png"><br>
+- 위 코드 수행 후, 아래의 URL로 이동하면 ``test.sparse.tsv`` 와 동일한 형태의 데이터를 입력시킬 수 있는 폼이 출력
+```shell
+http://localhost:8080/html/class.html
+```
+<img width="792" alt="스크린샷 2021-11-20 오후 6 53 40" src="https://user-images.githubusercontent.com/54783194/142722048-58a3e40e-3d73-41a4-966e-4d40592aa0fe.png"><br>
+- 데이터 입력시킨 후 ``데이터 전송`` 버튼 누르면 입력시킨 데이터에 대한 레이블 예측 값이 아래처럼 출력
+
+<img width="792" alt="스크린샷 2021-11-20 오후 6 53 49" src="https://user-images.githubusercontent.com/54783194/142722073-f8fafc3c-1cda-46bf-8cbe-9c5eb07599db.png"><br>

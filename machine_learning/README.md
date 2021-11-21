@@ -230,13 +230,21 @@ python src/test/test_dense.py [--retrain] [yes/no]
     - Epoch 횟수를 늘릴수록 정확도가 증가
 
 ### 6. 사후 분석
-- 사후분석은 성능 측면에서 가장 좋았던 ``Random Forest`` 모델 기반으로 수행 
+- 사후분석은 성능 측면에서 가장 좋았던 ``Random Forest`` 모델 기반으로 수행
+- 딥러닝 신경망의 오차역전파 수행 후, 갱신된 각 변수의 가중치 값 크기를 관찰
+
+(1) Feature Importance
 - ``Problem 1``과 동일하게 Tree 기반 모델의 ``Feature Importance`` 기법과 ``Permutation Importance`` 기법 2가지를 수행해 모델 예측력에 중요한 변수 분석
   - 단, ``Problem 2``의 데이터가 ``10만 x 42개의 변수`` 로 많기 때문에 ``Permutation Importance`` 기법 사용 시 반복 횟수는 5회로 제한<br><br>
 <img width="1000" alt="스크린샷 2021-11-19 오후 4 17 09" src="https://user-images.githubusercontent.com/54783194/142581142-6ce535e9-9e74-450d-a404-b1c8da46ac2e.png"><br>
 - 위 그래프 분석 결과, 빨간색 네모칸처럼 중요도가 가장 높은 공통의 상위 변수로는 ``ftr113``으로 존재하긴 하지만 해당 변수의 절대적인 중요도 값이 높은 편은 아님
 - 따라서 모델의 예측력에는 42개의 모든 변수가 골고루 기여하는 것으로 판단
 - 단, ``ftr113`` 변수의 의미가 익명이기 때문에 구체적인 변수의 의미는 파악이 불가하지만 광고 카테고리 예측에 가장 크게 기여하는 변수임은 분명한 것으로 도출
+
+(2) 딥러닝 신경망의 가중치 값
+- 딥러닝 신경망의 오차역전파 수행 후, 갱신된 각 변수의 가중치 값을 아래와 같이 확인
+<img width="425" alt="스크린샷 2021-11-21 오전 11 53 26" src="https://user-images.githubusercontent.com/54783194/142747625-324c4a09-dfca-451c-ac45-1515796d1d40.png"><br>
+- 관찰 결과, (1) Feature Importance 결과와는 달리, 
 
 # 🔖 Problem 3
 ## 🔗 Flask 웹 서버에서 새로운 입력 데이터에 대한 예측 방법
